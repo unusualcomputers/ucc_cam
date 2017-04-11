@@ -1,0 +1,59 @@
+resolutions:
+
+	photo:
+		8mp, 3280x2464, mode 2, port image (if fast enough), preview 320x240
+		2mp, 1640x1232, mode 4, port video, preview 320x240 [DEFAULT]
+		hd 1080 (2mp, 16:9), 1920x1080, mode 1, port video, preview 320x180
+		hd 720, (1mp), 1280x720, mode 6, preview 320x180 [DEFAULT]
+		vga, 640x480, mode 7, preview 320x240
+	video
+		hd 1080, 1920x1080, mode 1, 30fps, preview 320x180
+		hd 720, 1280x720, mode 6, 50fps, preview 320x180 [DEFAULT]
+		slow-mo, 1280x720, mode 6, 90fps reduced to 30fps?, preview 320x180
+		vga, 640x480, mode 7, 25fps, preview 320x240
+settings:
+
+	photo/video:
+	
+		basic:
+                        resolutions
+                        quality
+			fix current measured
+			rotation 0 90 180 270
+			?stabilization (video only)
+                        
+	
+		effects:
+			white balance
+			exposure mode
+			image effect
+			colour effect
+			denoise
+		details:
+			iso
+			shutter speed
+			brightness (0-100)
+			contrast (-100 - 100)
+			saturation -100 - 100
+			sharpness -100 - 100
+                        ???meter mode average spot backlit matrix
+                        
+	timelapse:
+			hd 720/hd 10807
+			how long (when not stitching old)
+			how often (when not stitching old)
+			fps (auto (30), don't stitch, 1-120)
+			stitch old - brings up dialog to ask which one
+			
+	audio:
+		mic
+		quality (phone, old radio, cd)
+		
+	other:
+            save (list of nice words)
+            load (list of names of files)
+            preview
+                email
+                twit
+                delete
+            wifi
