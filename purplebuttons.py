@@ -1,6 +1,6 @@
 import wx
 from wx.lib.buttons import GenButton	
-from colors import *
+from colours import *
 
 class PurpleButtons:
     def __init__(self, parent, font, clickedCallback, texts, default):
@@ -54,12 +54,14 @@ class PurpleButtons:
                 self.clickedCallback(btn.GetLabelText())
 
 class PurpleButton(GenButton):
-    def __init__(self,parent, label, pos, sz, font, clickedCallback):
+    def __init__(self,parent, label, pos, sz, font, clickedCallback, col = btnForeground, colSel = btnForegroundSel ):
         GenButton.__init__(self,parent,id=-1,pos = pos, size = sz, label = label)
         self.SetBezelWidth(0)
         self.SetUseFocusIndicator(False)
         self.SetBackgroundColour(basePurple)
-        self.SetForegroundColour(btnForeground)
+        self.colSel = colSel
+        self.col = col
+        self.SetForegroundColour(col)
         self.SetFont(font)
         self.Bind(wx.EVT_LEFT_DOWN, self.OnDown)
         self.Bind(wx.EVT_LEFT_UP, self.OnUp)
@@ -71,13 +73,13 @@ class PurpleButton(GenButton):
     	pass
 
     def OnUp(self,event):
-        self.SetForegroundColour(btnForeground)
+        self.SetForegroundColour(self.col)
         if(self.HasCapture()):        
 		    self.ReleaseMouse()
         self.clickedCallback(self.GetLabelText())
 
     def OnDown(self,event):
-        self.SetForegroundColour(btnForegroundSel)
+        self.SetForegroundColour(self.colSel)
         self.CaptureMouse()
 
 class PurpleState(GenButton):

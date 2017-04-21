@@ -1,6 +1,6 @@
 import wx
 import wx.lib.stattext as ST
-from colors import *
+from colours import *
 
 class InfoBox(ST.GenStaticText):
     def __init__(self, parent, pos, size,font, values, rotateOnce = True):
